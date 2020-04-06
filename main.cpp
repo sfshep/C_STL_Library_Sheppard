@@ -19,6 +19,9 @@ using namespace std;
 typedef map<string, int> MapT;
 typedef MapT::const_iterator MapIterT;
 
+//prototype
+bool less_than_7(int);
+
 //Credit https://www.geeksforgeeks.org/passing-vector-constructor-c/ clarifications added
 class MyClassVector1 
 { 
@@ -270,18 +273,61 @@ int main()
            
     /****Section_Name****Map_Summary*/
     //Write the code as presented in: 16. Map summary
-
     //Write comments that help one better understand what the code is doing.
+    // A map is a container that holds unique pairs of keys and values.
+    // The elements are always sorted by its keys.  Each element of the map // is formed by the combination of th ekey value and a mapped value.
+    // Map iterators access both the key and the mapped value at the same //time.
+
+            map< string, string > phone_book;
+            phone_book["411"] = "Directory";
+            phone_book["911"] = "Emergency";
+            phone_book["508-678-2811"] = "BCC";
+            if ( phone_book.find("411") != phone_book.end())
+            {
+              phone_book.insert(
+                make_pair(
+                  string( "411"),
+                  string( "Directory")
+                )
+              );
+            }
+            assert( phone_book.size()==3);
+            map< string, string >::const_iterator it3;
+            cout << "\n\nMap Summary" << endl;
+            for ( it3 = phone_book.begin(); it3 != phone_book.end(); ++it3)
+            {
+              cout << " " << it3->first
+                   << " " << it3->second
+                   << endl;
+            }
+
+
+
 
     /****Section_Name**** Sort_Algorithm*/
     //Write the code as presented in: 23. sort example
-
     //Write comments that help one better understand what the code is doing.
+    // std::sort - Sorts an array in ascending order
+
+          int arr[100];
+          sort(arr, arr + 100);
+          vector<int> v1;
+          sort(v1.begin(), v1.end() );
+
+
 
     /****Section_Name****Predicate_Algorithm*/
     //Write the code as presented in: 25. count_if and predicate function
+    //Write comments that help one better understand what the code is doing.
+    // Counts the number of elements in a range for which a specified //predicate function is true
 
-    //Write comments that help one better understand what the code is doing. 
+    bool less_than_7(int value)
+    {
+        return value < 7;
+    }
+     vector< int > v2;
+     int count_less = std::count_if( v1.begin(), v1.end(), less_than_7);
+     
 
       return 0; 
  }
