@@ -10,6 +10,9 @@ create a single main.cpp that contains code samples and implementations of each 
 #include <vector>
 #include <algorithm> 
 #include <string>
+#include <cassert>
+#include <stack>
+#include <set>
 using namespace std; 
 
 //Credit https://www.geeksforgeeks.org/passing-vector-constructor-c/ clarifications added
@@ -164,15 +167,67 @@ int main()
         obj.print(); 
 
     /****Section_Name***STL_Iterators*/ 
+
+      vector<int> vint(10); // vector with 10 integer numbers
+      vint[0] = 1;
+      vint[1] = 2;
+      vint[2] = 3;
+      vint[3] = 4;
+      vint[4] = 5;
+      vint[5] = 6;
+      vint[6] = 7;
+      vint[7] = 8;
+      vint[8] = 9;
+      vint[9] = 10;
+
+      //Display elements of the vector:
+      vector<int>:: iterator it;
+      cout<< "\n STL Iterators"<< endl;
+          for ( it = vint.begin(); it != vint.end(); ++it)
+            {
+                cout << " " << *it;    
+            }
+      
     
 
     /****Section_Name*** Stack*/
-
-
     //Write comments that help one better understand what the code is doing.
+    // A stack is a container that permits to insert and extract its elements //only from th top of the container.
+        stack<int> st;
+        st.push(100);   //push number on the stack
+        assert( st.size() ==1); //verify one element is on the stack
+        assert( st.top() == 100); //verify element value
+        
+        st.top() = 456;     // assign new value
+        assert( st.top() == 456);
+
+        st.pop();       //Remove element
+        assert( st.empty() == true );
+
 
     /****Section_Name**** Set*/
     //Write the code as presented in: 3. std::set
+    // A set is a container that holds unique elements.
+    // The elements in std::set are always sorted.
+
+        set<int> iset;    //set of unique integer numbers
+        iset.insert(11); // populate set with some nValues
+        iset.insert(-11);
+        iset.insert(55);
+        iset.insert(22);
+        iset.insert(22);
+        if (iset.find(55) != iset.end() ) // is value already stored?
+        {
+          iset.insert(55);
+        }
+        assert(iset.size() == 4);  // check
+        set<int>::iterator it2;
+        cout << "\n\nOutput of \"std::set\" code" << endl;
+        for (it2 = iset.begin(); it2 != iset.end(); it2++)
+        {
+          cout << " " << *it2;
+        }
+
 
     //Write comments that help one better understand what the code is doing.
 
