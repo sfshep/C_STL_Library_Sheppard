@@ -16,6 +16,8 @@ create a single main.cpp that contains code samples and implementations of each 
 #include <utility>
 #include <map>
 using namespace std; 
+typedef map<string, int> MapT;
+typedef MapT::const_iterator MapIterT;
 
 //Credit https://www.geeksforgeeks.org/passing-vector-constructor-c/ clarifications added
 class MyClassVector1 
@@ -255,12 +257,17 @@ int main()
     //Write the code as presented in: 14. std::map::insert
     //Write comments that help one better understand what the code is doing.
     // The map::insert() is a built in function used to insert elements with // a particular key in the map container.
-
-    
-
-
-
-
+            MapT amap;
+            pair< MapIterT, bool> result = 
+                amap.insert( make_pair( "Fred", 45));
+            assert( result.second == true );
+            assert( result.first->second == 45 );
+            result = amap.insert( make_pair( "Fred", 54) );
+            //Fred was already in the map, and result.first
+            //simply points there now;
+            assert (result.second == false);
+            assert( result.first -> second == 45);
+           
     /****Section_Name****Map_Summary*/
     //Write the code as presented in: 16. Map summary
 
