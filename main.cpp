@@ -320,14 +320,16 @@ int main()
     //Write the code as presented in: 25. count_if and predicate function
     //Write comments that help one better understand what the code is doing.
     // Counts the number of elements in a range for which a specified //predicate function is true
-
-    bool less_than_7(int value)
-    {
-        return value < 7;
-    }
-     vector< int > v2;
-     int count_less = std::count_if( v1.begin(), v1.end(), less_than_7);
+    //FYI - the compiler saw this as a fucntion and would not allow me to "define" it here.  So I moved it outside of main.
+   
      
 
       return 0; 
  }
+
+ bool less_than_7(int value)
+    {
+        return value < 7;
+    }
+     vector< int > v1;
+     int count_less = std::count_if( v1.begin(), v1.end(), less_than_7);
