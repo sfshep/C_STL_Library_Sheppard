@@ -47,8 +47,14 @@ int main()
     vd.push_back(2);
     vd.push_back(3);
     vd.push_back(55.4); 
+    vd.push_back(73.4); // additonal 3
+    vd.push_back(8.7);
+    vd.push_back(4);
 
     //add 3 elements to the vi vector
+    vi.push_back(17);
+    vi.push_back(21);
+    vi.push_back(64);
 
    // add 3 elements to the vs vector
 
@@ -65,6 +71,16 @@ int main()
    }
 
     //display the 3 elements in the vi vector
+    cout << "\nValues in vi: \n"; 
+   for(double vals : vi)
+   {
+     cout << vals << endl; 
+   }
+   cout << "\nAnother way to print vector: " << endl; 
+   for(int i = 0; i < vi.size(); i++)
+   {
+     cout << vi[i] << endl; 
+   }
 
    // display the 3 elements in the vs vector
 
