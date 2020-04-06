@@ -13,6 +13,8 @@ create a single main.cpp that contains code samples and implementations of each 
 #include <cassert>
 #include <stack>
 #include <set>
+#include <utility>
+#include <map>
 using namespace std; 
 
 //Credit https://www.geeksforgeeks.org/passing-vector-constructor-c/ clarifications added
@@ -233,13 +235,31 @@ int main()
 
     /****Section_Name****Pair_Structure*/
     //Write the code as presented in: 4. std::pair structure
-
     //Write comments that help one better understand what the code is doing.
+    // THe std::pair structure holds one object of type T1 and another one of // type T2, excaclty two elements.  The <utility> header must be used.
+
+          pair< string, string > strstr;
+          strstr.first = "Hello";
+          strstr.second = "World";
+
+          pair<int,  string > intstr;
+          intstr.first = 1;
+          intstr.second = "one";
+
+          pair< string, int > strint( "two", 2);
+          assert(strint.first == "two");
+          assert(strint.second ==2);
+
 
     /****Section_Name**** Map_Insert*/
     //Write the code as presented in: 14. std::map::insert
-
     //Write comments that help one better understand what the code is doing.
+    // The map::insert() is a built in function used to insert elements with // a particular key in the map container.
+
+    
+
+
+
 
     /****Section_Name****Map_Summary*/
     //Write the code as presented in: 16. Map summary
