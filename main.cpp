@@ -32,6 +32,45 @@ class MyClassVector1
       } 
 };
 
+//Credit https://www.geeksforgeeks.org
+// Initializing vector object using initializer list.
+class MyClassVector2 
+{ 
+    vector<int> vec2; 
+  
+public: 
+    MyClassVector2(vector<int> v) : vec2(v) 
+    { 
+    } 
+    void print() 
+    { 
+        /// print the value of vector 
+        for (int i = 0; i < vec2.size(); i++) 
+            cout << vec2[i] << " "; 
+    } 
+}; 
+//Credit https://www.geeksforgeeks.org
+// To initialize a vector reference.
+class MyClassVector3 
+{ 
+    vector<int>& vec3; 
+  
+public: 
+    // this is the right way to assign 
+    // the reference of stl container 
+    MyClassVector3(vector<int>& arr) 
+        : vec3(arr) 
+    { 
+    } 
+    void print() 
+    { 
+        /// print the value of vector 
+        for (int i = 0; i < vec3.size(); i++) 
+            cout << vec3[i] << " "; 
+    } 
+}; 
+
+
 int main() 
 {
     /****Section_Name***Vectors*/ 
@@ -108,7 +147,21 @@ int main()
         MyClassVector1 obj(vec); 
         obj.print(); 
       
-      //Continue with MyClassVector2 and MyClassVector3
+      //Continue with MyClassVector2  
+    cout << "\nVector_Using Initialer List" << endl;
+      vector<int> vec2; 
+          for (int i = 1; i <= 5; i++) 
+              vec2.push_back(i); 
+          MyClassVector2 obj2(vec2); 
+          obj.print(); 
+
+    //Continue with MyClassVector3
+    cout << "\nVector_Reference" << endl;
+        vector<int> vec3; 
+        for (int i = 1; i <= 5; i++) 
+            vec.push_back(i); 
+        MyClassVector3 obj3(vec3); 
+        obj.print(); 
 
     /****Section_Name***STL_Iterators*/ 
     
